@@ -13,7 +13,7 @@ from typing import Optional
 if sys.version_info < (3, 9):
     raise RuntimeError("Only Python 3.9 and newer is supported")
 
-line_re = re.compile(r"^sec(>\s{2}|\s{3})[\w\d]+\/0x(?P<keyid>[0-9A-F]{16})")
+line_re = re.compile(r"^sec([>#]\s{2}|\s{3})[\w\d]+\/0x(?P<keyid>[0-9A-F]{16})")
 
 
 def find_keys() -> list[tuple[str, Optional[str]], bool]:
